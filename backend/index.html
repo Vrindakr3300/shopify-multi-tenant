@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Shopify Multi-Tenant API UI</title>
+  <style>
+    body {
+      background: #f5f7fa;
+      font-family: Arial, sans-serif;
+      padding: 40px;
+      display: flex;
+      justify-content: center;
+    }
+    .container {
+      width: 400px;
+      background: white;
+      padding: 25px;
+      border-radius: 14px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 15px;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #4a6cf7;
+      color: white;
+      font-size: 16px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    button:hover {
+      background: #3a55c7;
+    }
+    .output {
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 8px;
+      background: #eef0f5;
+      font-size: 14px;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>User Registration</h2>
+
+    <input id="regEmail" type="email" placeholder="Email" />
+    <input id="regPassword" type="password" placeholder="Password" />
+
+    <button onclick="registerUser()">Register</button>
+
+    <h2>User Login</h2>
+
+    <input id="logEmail" type="email" placeholder="Email" />
+    <input id="logPassword" type="password" placeholder="Password" />
+
+    <button onclick="loginUser()">Login</button>
+
+    <div class="output" id="output">Response will appear here...</div>
+  </div>
+
+  <script>
+    const API = "http://localhost:4000";
+
+    function showResponse(data) {
+      document.getElementById("output").innerText = JSON.stringify(data, null, 2);
+    }
+
+    async function registerUser() {
+      const email = document.getElementById("regEmail").value;
+      const password = document.getElementById("regPassword").value;
+
+      const res = await fetch(`${API}/api/auth/register`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password })
+      });
+
+      showResponse(await res.json());
+    }
+
+    async function loginUser() {
+      const email = document.getElementById("logEmail").value;
+      const password = document.getElementById("logPassword").value;
+
+      const res = await fetch(`${API}/api/auth/login`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password })
+      });
+
+      showResponse(await res.json());
+    }
+  </script>
+
+</body>
+</html>

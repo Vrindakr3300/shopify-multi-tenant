@@ -1,0 +1,15 @@
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Logs
+logs
+*.log
+
+# Environment variables
+.env
+
+# Next.js
+.next/
+out/

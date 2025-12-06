@@ -149,8 +149,7 @@ ASCII Architecture Diagram (GitHub-friendly)
 +-------------+
 
 
-If you'd like a PNG version, tell me:
-👉 “Generate architecture diagram image”
+
 
 🔌 API Endpoints
 

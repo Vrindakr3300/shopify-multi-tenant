@@ -47,7 +47,7 @@ The platform supports **multiple Shopify stores (tenants)** per user.
 ---
 
 # 📦 Project Structure
-
+'''
 shopify-multi-tenant/
 │
 ├── backend/

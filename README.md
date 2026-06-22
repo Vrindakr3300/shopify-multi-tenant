@@ -44,9 +44,10 @@ The platform supports **multiple Shopify stores (tenants)** per user.
 ### **Database**
 - MySQL with normalized schema for customers, orders, products, shops, users
 
----
-# 📦 Project Structure
+```markdown
+## 📦 Project Structure
 
+```bash
 shopify-multi-tenant/
 │
 ├── backend/

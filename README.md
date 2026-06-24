@@ -1,4 +1,4 @@
-# Shopify Multi-Tenant Data Ingestion & Insights Platform
+# Shopify Multi Tenant Data Ingestion & Insights Platform
 
 This project provides a **multi-tenant backend + dashboard** that connects to **Shopify stores**, ingests:
 - Customers  
